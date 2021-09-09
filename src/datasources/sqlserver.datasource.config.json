@@ -1,0 +1,11 @@
+{
+  "name": "sqlserver",
+  "connector": "mssql",
+  "requestTimeout": 5000000,
+  "url": "",
+  "host": "solidwastemanagement.ctkfwt1fpsdw.ap-south-1.rds.amazonaws.com",
+  "port": 1433,
+  "user": "admin",
+  "password": "target2020",
+  "database": "devsolidwastemanagement"
+}
