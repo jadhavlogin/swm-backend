@@ -3,9 +3,9 @@
   "connector": "mssql",
   "requestTimeout": 5000000,
   "url": "",
-  "host": "solidwastemanagement.ctkfwt1fpsdw.ap-south-1.rds.amazonaws.com",
+  "host": "panahalanagarpalikasql.czgezewmgh27.ap-south-1.rds.amazonaws.com",
   "port": 1433,
   "user": "admin",
-  "password": "target2020",
-  "database": "devsolidwastemanagement"
+  "password": "admin2020",
+  "database": "panahalanagarpalika"
 }
