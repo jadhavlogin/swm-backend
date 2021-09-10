@@ -13,10 +13,10 @@ import * as http from 'http';
 import * as sql from 'mssql';
 
 const config = {
-  server: 'solidwastemanagement.ctkfwt1fpsdw.ap-south-1.rds.amazonaws.com',
+  server: 'panahalanagarpalikasql.czgezewmgh27.ap-south-1.rds.amazonaws.com',
   user: 'admin',
-  password: 'target2020',
-  database: 'devsolidwastemanagement',
+  password: 'admin2020',
+  database: 'panahalanagarpalika',
   port: 1433,
   options: {
     trustedConnection: true,

@@ -129,6 +129,21 @@ export class PalikahomesController {
     return this.palikaHomesRepository.findById(id);
   }
 
+  @get('/palikahomes/byVehicle/{vno}', {
+    responses: {
+      '200': {
+        description: 'PalikaHomes model instance',
+        content: {'application/json': {schema: getModelSchemaRef(PalikaHomes)}},
+      },
+    },
+  })
+  async byVehicle(@param.path.string('vno') vno: string) {
+    const query = "Select * from PalikaHomes where vehicleNo='" + vno + "'";
+    return this.palikaHomesRepository.dataSource.execute(query).then((data: any) => {
+      return data;
+    });
+  }
+
   @patch('/palikahomes/{id}', {
     responses: {
       '204': {

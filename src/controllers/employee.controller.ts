@@ -161,4 +161,45 @@ export class EmployeeController {
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.employeeRepository.deleteById(id);
   }
+
+  @post('/employees/login', {
+    responses: {
+      '200': {
+        description: 'Employee model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Employee)}},
+      },
+    },
+  })
+  async checkEmployeeLogin(@requestBody({
+    content: {
+      'application/json': {},
+    },
+  }) employee: any) {
+    const query = 'Select * from Employee where userName=' +
+    "'" +
+    employee.userName +
+    "' and password=" +
+    "'" +
+    employee.password +
+    "'"
+    return this.employeeRepository.dataSource.execute(query).then((data: any) => {
+      if (data && data.length > 0) {
+        return {
+          message: 'success',
+          status: 200,
+          data: data[0],
+        }
+      } else {
+        return {
+          message: 'Not Found',
+          status: 201,
+        };
+      }
+    }, () => {
+      return {
+        message: 'Not Found',
+        status: 201,
+      };
+    });
+  }
 }
